@@ -66,8 +66,8 @@ const ExpenseDetailScreen: React.FC = ({ route }) => {
           <MapView
             provider={PROVIDER_GOOGLE}    // remove if not using Google Maps
             region={{
-              latitude: expense.userLat,
-              longitude: expense.userLng,
+              latitude: expense.latitude,
+              longitude: expense.longitude,
               latitudeDelta: 0.001,
               longitudeDelta: 0.0111,
             }}
@@ -75,8 +75,8 @@ const ExpenseDetailScreen: React.FC = ({ route }) => {
             <Marker
               title={`${expense.amount} Rs.`}
               coordinate={{
-                latitude: expense.userLat,
-                longitude: expense.userLng,
+                latitude: expense.latitude,
+                longitude: expense.longitude,
               }} />
           </MapView>
         </View>

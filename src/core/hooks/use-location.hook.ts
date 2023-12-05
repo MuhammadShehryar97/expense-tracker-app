@@ -1,18 +1,22 @@
-import { useLayoutEffect, useState } from 'react';
+import { useLayoutEffect } from 'react';
 import Geolocation from '@react-native-community/geolocation';
+import { useDispatch } from 'react-redux';
+import { setLocationCoords } from '../redux/expense.slice';
 
 const useLocation = () => {
-
-  const [userLat, setUserLat] = useState<number>(0);
-  const [userLng, setUserLng] = useState<number>(0);
+  const dispatch = useDispatch();
 
   useLayoutEffect(() => {
     Geolocation.getCurrentPosition(
       (position) => {
         const { latitude, longitude } = position.coords;
+        
+        const coords = {
+          latitude: latitude,
+          longitude: longitude
+        };
 
-        setUserLat(latitude);
-        setUserLng(longitude);
+        dispatch(setLocationCoords(coords));
       },
       (error) => {
         console.error(error);
@@ -22,7 +26,6 @@ const useLocation = () => {
 
   }, []);
 
-  return { userLat, userLng, setUserLat, setUserLng };
 };
 
 export default useLocation;

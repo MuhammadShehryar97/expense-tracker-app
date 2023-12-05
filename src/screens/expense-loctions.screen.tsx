@@ -31,8 +31,8 @@ const ExpenseLocationsScreen: React.FC = () => {
             <Marker
               title={`${item.amount} Rs.`}
               coordinate={{
-                latitude: item.userLat,
-                longitude: item.userLng,
+                latitude: item.latitude,
+                longitude: item.longitude,
               }} 
             />
           ))}

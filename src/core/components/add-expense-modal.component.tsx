@@ -34,7 +34,7 @@ const AddExpenseModal: React.FC = () => {
   const { top } = useSafeAreaInsets();
 
   const { expenseList } = useAppSelector(state => state.expenseList);
-  const { userLat, userLng } = useLocation();
+  const {locationCoords} = useAppSelector(state => state.expenseList);
 
   const initialValues = useMemo(
     () => ({
@@ -48,15 +48,14 @@ const AddExpenseModal: React.FC = () => {
   const onSubmit = useCallback(
     async (values: any) => {
       await dispatch(setExpenseList([
-        { ...values, userLat, userLng },
+        { ...values, ...locationCoords},
         ...expenseList,
       ]));
       resetForm();
       closeModal();
     }, [
     expenseList,
-    userLat,
-    userLng
+    locationCoords
   ]);
 
   const { values, handleChange, setFieldValue, handleBlur, handleSubmit, resetForm } =
