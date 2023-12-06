@@ -1,6 +1,7 @@
 # Expense Tracker App
 
 The Expense Tracker App is a mobile application that empowers users to manage their expenses efficiently. With manual expense logging, location tagging, map display, and budget alerts, it provides a comprehensive solution for tracking and controlling personal spending.
+This App utilizes Redux Persist to ensure seamless data persistence across app sessions. This feature allows users to retain their expense data even when the app is closed or the device is restarted.
 
 ## Key Features
 
@@ -59,6 +60,8 @@ The Expense Tracker App is a mobile application that empowers users to manage th
 - **React Native:** The app is developed using React Native for cross-platform compatibility.
 - **Geolocation:** The react-native-community/geolocation library is chosen for GPS location tagging. Offers a standardized and easy-to-use API for obtaining the device's current location and tracking its changes over time.
 - **Maps Integration:** The react-native-maps library is selected for map integration. It offers a seamless map display with various customization options and supports features such as adding markers (pins) and displaying the user's current location.
+- **Redux Persist:** using Redux Persist to ensure seamless data persistence across app sessions. This feature allows users to retain their expense data even when the app is closed or the device is restarted.
+- Now, with Redux Persist, users can enjoy a continuous and uninterrupted experience, with their expense data persistently stored between app sessions.
 
 ## Contributing
 
